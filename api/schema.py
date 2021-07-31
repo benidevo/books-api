@@ -10,6 +10,9 @@ class BookType(DjangoObjectType):
 
 
 class Query(graphene.ObjectType):
+    '''
+    Get all books in the database
+    '''
     all_books = graphene.List(BookType)
     book = graphene.Field(BookType, book_id=graphene.Int())
 
@@ -29,6 +32,9 @@ class BookInput(graphene.InputObjectType):
 
 
 class CreateBook(graphene.Mutation):
+    '''
+    Add new book to database
+    '''
     class Arguments:
         book_data = BookInput(required=True)
 
@@ -47,6 +53,9 @@ class CreateBook(graphene.Mutation):
 
 
 class UpdateBook(graphene.Mutation):
+    '''
+    update a book by its ID
+    '''
     class Arguments:
         book_data = BookInput(required=True)
     
@@ -68,6 +77,9 @@ class UpdateBook(graphene.Mutation):
 
 
 class DeleteBook(graphene.Mutation):
+    '''
+    Delete a book in the database
+    '''
     class Arguments:
         id = graphene.ID()
 
