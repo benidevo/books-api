@@ -47,5 +47,5 @@ Before starting, you need to have [Git](https://git-scm.com) and [Python 3.9](ht
 
 # GraphQL Endpoint
 
-    http://localhost:8080/graphql
+    http://localhost:8000/graphql
 
